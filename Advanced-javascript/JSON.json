@@ -1,0 +1,24 @@
+JSON : javascript object notation
+
+* JSON is a data representation format
+* Commonly used for API's and config files
+* Light weight and easy to read and write
+* Integrate easily with most of the languages.
+
+
+JSON Types:
+
+* String: 'saju'
+* Numbers: 24
+* Boolean : true or false
+* Array: [1,2,3] or ['saju', 'sahil']
+* Objects: {'name':'saju'} or {'age':28}
+
+Example of JSON:
+{
+    "name": "saju",
+    "age": 28,
+    "movie":"logan",
+    "hobbies":["gym", "watch movies", "sleeping"],
+    "friends": [{"name":"pankaj", "age":28},{"name":"ashish", "age":30}]
+}

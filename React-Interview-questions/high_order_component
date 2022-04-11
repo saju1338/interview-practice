@@ -1,0 +1,14 @@
+HOC
+
+HOC is a pattern where a function takes a component as an argument and return new components in other words it enhance the functionality of the orginal component so return enhanced original component.
+
+e.g:
+
+const newComponent = highOrderComponent(originalComponent)
+
+highOrderComponent is a function which takes original component as an argument and return new component.
+
+e.g:
+const ironMan = suit(tonyStark)
+
+where suit is a function which enhances tonyStark and return ironMan.

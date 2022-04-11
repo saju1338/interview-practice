@@ -1,0 +1,50 @@
+<!-- // to understand the async javascript let's see how the below two functions behaves -->
+<html>
+<body>
+<h1>Asynchronous javascript</h1>
+<script>
+// var secondFunction = function(){
+//     console.log('second function call')
+// };
+
+// var firstFunct = function(){
+//     console.log('first function call')
+//      secondFunction();
+//      console.log('third console log')
+// }
+// firstFunct();
+
+// output of the above code isFinitefirst function call
+
+// first function call
+// second function call
+// third console log
+
+
+ Now let try to use setTimeout function in the second function
+
+// var secondFunction = function(){
+//     setTimeout(function(){
+//         console.log('second function call')
+//     },2000)
+// };
+
+// var firstFunct = function(){
+//     console.log('first function call')
+//      secondFunction();
+//      console.log('third console log')
+// }
+// firstFunct();
+
+// output of this wiil be:
+
+// first function call
+// third console call
+// second function call (after 2 seconds)
+
+</script>
+</body>
+
+</html>
+
+This is how javascript works, it executes line by line and if there is blocker (like setTimeout function which blocks parsing for 2 seconds) then javascript does not wait for the function to complete and continues parsing and blocker function will continue execute in the background.

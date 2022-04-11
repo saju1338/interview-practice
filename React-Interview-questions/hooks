@@ -1,0 +1,13 @@
+HOOKS
+
+Hooks are the new feature added in react 16.8 which allow you to use react features without adding class.
+for exapmle state component.
+
+* Suppose two components using the same functionality, so instead of writing the functionality for each component we simply use hooks. Please note, for using the common functionality between the component we can also use High Order Component(HOC). 
+
+Also, sometimes related code is not organized in one place
+e.g:
+Data Fetching: componentDidMount and componentDidUpdate
+Event Listener: componentDidMount and componentWillUnmount
+
+and because of the stateful logic we cannot break components into smaller ones.

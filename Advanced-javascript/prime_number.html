@@ -1,0 +1,37 @@
+we know that 1 and 2 are prime number so we don't need to check for these numbers
+
+<html>
+<body>
+<h1>Promises in javascript</h1>
+<script>
+
+var isPrimeNumber = function(num){
+    if(num===2){
+        return false
+    }
+    if(num<2 || num%2==0){
+        return false
+    }
+    for(var i=3; i<=num-1; i++){
+        if(num%i===0){
+            return false
+        }else{
+            return true
+        }
+    }
+}
+console.log(isPrimeNumber(100))
+// now we want to print all the prime number between 1 to 30
+
+// for(var i=0; i<30; i++){
+//     if(isPrimeNumber(i)){
+//         console.log(i)
+//     }
+// }
+
+// we also want to check how many times javascript function has to iterate through the loop to find the prime number so, for doin this we will add counter and increase its value every time it goes in the for loop. 
+
+</script>
+</body>
+
+</html>

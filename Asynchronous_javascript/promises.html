@@ -1,0 +1,45 @@
+<!-- Promises is an object that keeps track whether a certain event has happened already or not, and determines what happened after the event.
+
+Promises have certain state, like before the event happened, promise is in pending state. After the event happened, promise is in Resolved or Rejected State. When the promise is actually successful then the result is fullfilled or else the promise is rejected.
+
+Let see an example below: -->
+
+
+<html>
+<body>
+<h1>Promises in javascript</h1>
+<script>
+
+    var getIds = new Promise(function(resolve,reject){
+        setTimeout(function(){
+            resolve([2,4,6,7])
+        }, 1500)
+    });
+
+    getIds.then(function(ids){
+        console.log(ids)
+    }).catch(function(error){
+        console.log("error")
+    })
+
+    //let see simple example of promises
+
+    var sum = new Promise(function(resolve,reject){
+        var sum = 2 + 2;
+        if(sum==4){
+            resolve('success')
+        }else{
+            reject('failed')
+        }
+    })
+
+    sum.then(function(message){
+        console.log('this message is in ' +message)
+    }).catch(function(message){
+        console.log('this message is in ' +message)
+    })
+
+</script>
+</body>
+
+</html>

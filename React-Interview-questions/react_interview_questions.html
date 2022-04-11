@@ -1,0 +1,231 @@
+Name lifecycle methods and their purpose:
+
+ <!-- 
+*  componentWillMount: Executed before rendering and is used for App level configuration in your root component.
+
+*   componentDidMount: Executed after first rendering and here all AJAX requests, DOM or state updates, and set up event listeners should occur.
+
+*   componentWillReceiveProps: Executed when particular prop updates to trigger state transitions.
+
+*   shouldComponentUpdate: Determines if the component will be updated or not. By default it returns true. If you are sure that the component doesn't need to render after state or props are updated, you can return false value. It is a great place to improve performance as it allows you to prevent a re-render if component receives new prop.
+
+*   componentWillUpdate: Executed before re-rendering the component when there are props & state changes confirmed by shouldComponentUpdate() which returns true.
+
+*   componentDidUpdate: Mostly it is used to update the DOM in response to prop or state changes.
+
+*   componentWillUnmount: It will be used to cancel any outgoing network requests, or remove all event listeners associated with the component. 
+
+-->
+
+
+Why do we use arrow function in react
+
+<!-- 
+    Because arrow function doesn't have their 'this' reference
+    Suppose we are handeling a click event in class component and we write click handler function and in this click handler function we are writing the another function that will return the updated state.
+    so suppose instead of arrow function, we are using the regular function and we are in the nested function and we use 'this.state' to update the state, so 'this' will refer to the function which we are writing 'this', not to the parent function where we define state, so state will not get updated.
+-->
+
+
+How to prevent component from re-rendering?
+
+<!-- 
+There are various methods to stop component from re-rendering:
+
+*   shouldComponentUpdate() : before the component render, it will check if it should re-render or not and you take that decision in this method.
+You can do that by simply returning false or by comparing new state with the old state.
+
+*   React.PureComponent() : If we are using pure component then there is not need of shouldComponentUpdate() method as PureComponent also do the shallow comparison of old state and current state and if they are the same, then it stops rendering, you dosn't have to do that anything.
+
+-->
+
+Explain error boundaries?
+
+<!-- 
+It is same as catch in try and catch in javascript. For this you need to create a new component like below:
+
+<ErrorBoundayComp>
+    <MyComp />
+</ErrorBoundayComp>
+
+and the ErrorBoundaryComp must have any of the below methods to make it error boundary component
+
+static getDerivedStateFromError : in this phase we catch the error if it appear and change the state accordingly
+
+or 
+
+componentDidCatch : in this method you can actually log the error that is happening
+
+  -->
+
+  Best lifecycle method for API calls?
+
+  <!-- 
+When we make an API call, it get some data from the server and update the state accordingly and when we update the state, we re-render the component.
+So for component to re-render, we need to make sure that our DOM is ready, so the lifecycle method is componentDidMount.
+-->
+
+What is CSS in js pattern ?
+
+<!-- 
+As you know CSS is global, so changin some parts will impact other components as well.
+There are lots of concepts for scoping your css like
+* within the component you can have css, which does not impact other component as well.
+* But react uses only js, so you can pass css as js literal objects and this way you can do inline css.
+-->
+
+Why can't you update state directly without setState()?
+
+<!-- 
+setState() will always trigger re-rendering of component and you want re-rendering because your view is updated. 
+ -->
+
+ How do you conditionally render components?
+
+<!-- 
+In some cases you want to render different components depending on some state. JSX does not render false or undefined, so you can use conditional short-circuiting to render a given part of your component only if a certain condition is true.
+
+const MyComponent = ({ name, address }) => (
+  <div>
+    <h2>{name}</h2>
+    {address &&
+      <p>{address}</p>
+    }
+  </div>
+)
+If you need an if-else condition then use ternary operator.
+
+const MyComponent = ({ name, address }) => (
+  <div>
+    <h2>{name}</h2>
+    {address
+      ? <p>{address}</p>
+      : <p>{'Address is not available'}</p>
+    }
+  </div>
+) 
+-->
+
+What are fragments? and why do we use it
+
+<!-- 
+Fragments are used for a component to return multiple elements. Fragments let you group a list of children without adding extra nodes to the DOM. 
+for example:
+
+render() {
+  return (
+    <React.Fragment>
+      <ChildA />
+      <ChildB />
+      <ChildC />
+    </React.Fragment>
+  )
+}
+
+Why do we use it:
+
+* Fragments are a bit faster and use less memory by not creating an extra DOM node.
+* Some CSS mechanisms like Flexbox and CSS Grid have a special parent-child relationships, and adding divs in the middle makes it hard to keep the desired layout.
+-->
+
+What is redux middleware?
+
+<!-- 
+Suppose we have a UI which dispatches some action, in that case you are making a post request to the server to update the DB. Also, we are sending an action to the reducer to update the store.
+
+Now suppose, our post call is failed, so our DB will not get updated but we also send the action to the reducer, that means our store is updated now.
+
+But in react out DB and store needs to be in sync, but in aur case , store is updated but DB is not.
+
+That is why middleWare is required, what middleware does is, it senses that we are making a post call and when the positive response is coming from the server, then it dispatches the action to the reducer for updating the store.
+ -->
+
+ What is the difference between Redux Saga and Redux Middleware
+
+ <!-- 
+They are middleware and both do the same thing but differently 
+
+When you dispatch an action, it go to the reducer right away
+suppose we are writing the below line 
+let a =1 
+it will execute right away, but when we put this line in an action creator, then we are going to tell when we need to execute the action creator i.e we can delay the action like below:
+actionCreator = () => let a = 1
+
+same way the Thunk works
+
+First we create an action creator and then we pass it to the server through promises and with the positive response you send an action to the reducer. So, instead of sending action right away, you create an Action creator which works as a middleware.
+
+How Does Saga works:
+
+Instead of creating an action creator, you just dispatches an action, saga catches the action in the middle and then pass it to the server and after getting positive response from the server, it will pass the action to the reducer.
+
+-->
+
+Explain Virtual DOM ?
+
+<!-- 
+Updating DOM is very expensive, everytime you update something, you have repaint that on the DOM everytime.
+React has a DOM tree of its own which it creates during the initial render
+-->
+
+Updated Lifecycle Methods in React?
+
+<!-- 
+Phases of React component lifecycles are:
+
+Mounting
+Updating
+Unmounting 
+
+Mounting -----> constructor  -----> static getDerivedStateFromProps (If state is depend upon props) -----> render -----> componentDidMount
+
+UpdatingPhase -----> static getDerivedStateFromProps -----> shouldComponentUpdate -----> render  -----> getSnapshotBeforeUpdate -----> componentDidUpdate
+
+Unmounting Phase -----> componentWillUnmount
+-->
+
+constructor :
+<!--   : It is used to setup the initial values of variable and state -->
+
+static getDerivedStateFromProps:
+<!-- It is used when the state is depends upon the props, this method is invoked after the constructor and is expected to return an object to update the state of the component -->
+
+Render:
+<!-- This is the required method, as this method prepares the element to be mounted on the browser dom
+This method is pure i.e gives the same output everytime with the same input. -->
+
+componentDidMount:
+
+<!-- usage of this method is that, all the interaction are done directly with the browser dom. best place to call API's or any third party interaction -->
+
+shouldComponentUpdate:
+
+ <!-- this method should return true or false and depending on the output  component would be re-rendered or skipped -->
+
+ getSnapshotBeforeUpdate:
+
+ <!-- This method gets called after the render created the React element and before it is actually updated from virtual DOM to actual DOM. This phase is known as pre-commit phase. -->
+
+componentDidUpdate:
+
+<!-- is executed when the newly updated component has been updated in the DOM. This method is used to re-trigger the third party libraries used, and to make sure these libraries also update and reload themselves. -->
+
+componentWillUnmount
+
+<!-- This method is the last method in the lifecycle. This is executed just before the component gets removed from the DOM. -->
+
+
+Deprecated methods in the component lifecycle:
+
+componentWillMount:
+
+<!-- All the features of this lifecycles are covered in the constructor. This is renamed as UNSAFE_componentWillMount. -->
+
+componentWillReceiveProps:
+
+<!-- The new static method getDerivedStateFromProps is safe rewrite for this method and covers all the use cases of componentWillReceiveProps. The new name for this method is UNSAFE_componentWillReceiveProps. -->
+
+componentWillUpdate:
+
+<!-- The new method getSnapshotBeforeUpdate is safe rewrite for this method and covers all the use cases of componentWillUpdate.
+The new name for this method is UNSAFE_componentWillUpdate. -->

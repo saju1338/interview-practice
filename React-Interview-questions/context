@@ -1,0 +1,23 @@
+Context: 
+Context provides a way to pass data through a component tree to the specific component, without going through each component of the component tree.
+
+Suppose we have one parent component called appComponent and it has 3 child component A, B and C.
+B has one child component called D 
+C has two child components called E and F .
+Now, we want to pass the username which we have stored in appComponent to the component A, D and F. 
+Passing username from appComponent to A is easy as 'A' component is direct child of appComponent but passing the userName from appComponent to D is difficult as first we need to pass the username to B and then to D.
+To overcome this problem we use context.
+
+below is the example of context syntax:
+/*
+import React from 'react';
+
+const UserContext = React.createContext();
+
+const UserProvider = UserContext.Provider;
+const UserConsumer = UserContext.Consumer;
+
+export {UserProvider, UserConsumer};
+*/
+
+pass the UserProvider in the parent component and pass the UserConsumer to the component where we want to use the UserProvider value.

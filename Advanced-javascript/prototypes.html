@@ -1,0 +1,28 @@
+prototypes in javascript:
+
+* Every javascript object has a prototype property, which makes inheritence possible in javascript.
+* Prototype property of an object is where we put methods and properties, so that other objects can  inherit.
+* Functions prototype property is not the prototype of the function itself, it's the prototype of all the instances created through it.
+* When a certain method is called, search start in the object itself and if it cannot be found the search moves onto the object's prototype. Search continues untill the method is found.
+
+to give you an examle:
+
+let object={
+    name: "saju",
+    city: "kaithal",
+    myIntro: function(){
+        console.log(this.name + 'is from ' + this.city)
+    }
+}
+
+
+let object2={
+    name:'sahil'
+}
+
+object2.__proto__= object;
+
+above example will clear third point:
+
+suppose we print object2.myIntro then it will print "sahil is from kaithal". 
+first it searches the name in itself if it finds it then search completes then it search the city name in itself if it doesn't finds it then it goes to its prototype. 
