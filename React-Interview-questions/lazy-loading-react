@@ -1,0 +1,9 @@
+What is lazy Loading in react:
+
+Similar to javascript, only loading the needed part at a time.
+There is a inbuilt function in react called React.lazy() in which we pass an arrow function and as a result of this arrow function we call import as a function with the path of the component like below.
+React.lazy(()=>import("./path"))
+
+Points to remember while using import:
+
+* Above function is not sufficient, we need to import suspense fallback function in which we write jsx  for displaying to the user until the component loads
