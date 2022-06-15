@@ -1,0 +1,62 @@
+What is Gulp?
+
+GulpJS is an open-source JavaScript toolkit which allows users to automate the development processes. Which includes,
+automate process like scss to css conversion, file minification, picture optimization.
+
+
+Q: What are the various tasks that can be performed by Gulp's build system?
+
+Ans.
+CSS and Javascript preprocessors are compiled.
+concatenation multiple files into one.
+File minification.
+Enabling server auto reloading
+
+Q: What are CSS preprocessors?
+
+Ans:
+Css preprocessors are special css files which contains variables, functions and other functionalities which are not possible with normal css.
+
+Q: Advantages of using preprocessors?
+
+Ans:
+Join multiple files: you can create different file for each component and then import them all in main css file.
+
+Avoid repetitions: see the below example:
+
+Basic CSS
+
+.maindiv{
+Margin:5px;
+Padding:2px;
+border:1px double;
+}
+.subdiv1{
+Margin:5px;
+Padding:2px;
+border:2px double;
+}
+.subdiv2{
+Margin:5px;
+Padding:2px;
+border:3px double;
+}
+
+Now the same code using a CSS Preprocessor
+
+.maindiv{
+Margin:5px;
+Padding:2px;
+border:1px double;
+}
+.subdiv1{
+.maindiv;
+border:2px;
+}
+.subdiv2{
+.maindiv;
+Border:3px;
+}
+
+Nested Syntax: Nesting of classes in CSS makes it easy to target DOM elements and saves you time. Nesting also makes it
+tremendously easy to edit CSS files.
