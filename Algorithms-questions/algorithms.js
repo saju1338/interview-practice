@@ -105,3 +105,20 @@ function removeDuplicateArray(duplicateArray){
 }
 var array= [1,2,2,3,4,3,2,5,3];
 console.log(removeDuplicateArray(array))
+
+//Find Duplicate in array:
+
+const findDuplicateValue = (arr)=>{
+    var sortedArray= arr.sort();
+    var updatedArray=[];
+    for(var i=sortedArray.length-1; i>=0; i--){
+        if(sortedArray[i+1]==sortedArray[i]){
+            updatedArray.push(sortedArray[i])
+        }
+    }
+    
+    console.log(updatedArray)
+}
+
+
+findDuplicateValue([1,2,3,4,2,1,3,5,6,5,4])
