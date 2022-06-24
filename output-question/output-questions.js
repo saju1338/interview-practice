@@ -258,3 +258,30 @@ function checkAge(data) {
 // Explanation —When testing equality, primitives are compared by their value, while objects are compared by their reference. JavaScript checks if the objects have a reference to the same location in memory.
 // The two objects that we are comparing don’t have that: the object we passed as a parameter refers to a different location in memory than the object we used in order to check equality.
 // This is why both { age: 18 } === { age: 18 } and { age: 18 } == { age: 18 } return false.
+
+**********************************************************************************************************
+
+20.
+function xyz(){
+  let a =0;
+  if(true){
+      console.log(a);
+      let b= 9;
+      console.log(b)
+  }
+  console.log(a,b)
+}
+xyz()
+
+//0
+//9
+//ReferenceError: b is not defined
+
+**********************************************************************************************************
+21.
+const item=['jacket', 'shirt'];
+item.length=0;
+console.log(item[0])
+
+output= undefined;
+

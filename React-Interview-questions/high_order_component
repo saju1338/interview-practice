@@ -12,3 +12,7 @@ e.g:
 const ironMan = suit(tonyStark)
 
 where suit is a function which enhances tonyStark and return ironMan.
+
+//What are controlled and uncontrolled component
+
+Controlled component is component that get the changed value from the callback function and uncontrolled component is component that have the one from the DOM.

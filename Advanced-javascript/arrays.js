@@ -1,5 +1,20 @@
 // In this file we'll add everything about array
 
+//How to merge two arrays:
+
+var arr1=[1,2,3];
+var arr2=[4,5,6];
+var newArray= arr1.concat(arr2);
+
+another method: 
+
+with array destructuring:
+
+var newArray= [...arr1,...arr2]
+or
+arr1.push(...arr2)
+
+
 //how to add array in the end, beginning and middle position
 
 var simpleArray = [3,4]

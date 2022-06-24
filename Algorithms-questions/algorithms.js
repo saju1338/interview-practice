@@ -122,3 +122,43 @@ const findDuplicateValue = (arr)=>{
 
 
 findDuplicateValue([1,2,3,4,2,1,3,5,6,5,4])
+
+
+//get max number of characters in a string
+
+function getMaxCharacter(str){
+    var max=0;
+    var maxChar='';
+    str.split('').forEach((char)=>{
+        if(str.split(char).length>max){
+            max=str.split(char).length;
+            maxChar=char
+        }
+        
+    })
+    console.log(maxChar)
+}
+getMaxCharacter("ababdbabsbaaaa")
+
+//what does .slipt do: 
+
+var text = "How are you doing today?";
+const myArray = text.split('');
+
+output:
+myArray= H,o,w, ,a,r,e, ,y,o,u, ,d,o,i,n,g, ,t,o,d,a,y,?
+
+var text = "How are you doing today?";
+const myArray = text.split(' ');
+output:
+myArray=How,are,you,doing,today?
+
+//Print hello world after every second for 10 seconds
+
+var printHelloworld= setInterval(()=>{
+    console.log("hello world")
+},1000)
+
+setTimeout(function(){
+    clearInterval(printHelloworld)
+},10000)

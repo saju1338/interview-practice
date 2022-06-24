@@ -89,3 +89,115 @@ Mi
 Position: fixed generally means, fixed to the viewport i.e once we set it's position then it's postion is fixed and other element position won't  effect it's poition, either when you are scrolling, it's position won't change 
 
 position: sticky srolls along with the element like any other element untill it reaches the offset point we set. 
+
+
+//Different types of selectors in css
+
+* Id selector
+* Class selector
+* Element selector
+* universals(*) selector
+* group selector (h1,h2,h3)
+
+//Properties of a flexbox:
+
+* flex-direction:  The flex-direction property defines in which direction the container wants to stack the flex items.
+// for example: 
+
+// .flex-container {
+//     display: flex;
+//     flex-direction: column;
+//   }
+
+* flex-wrap: The flex-wrap property specifies whether the flex items should wrap or not.
+
+// for example:
+// .flex-container {
+//     display: flex;
+//     flex-wrap: wrap;
+//   }
+* flex-flow: The flex-flow property is a shorthand property for setting both the flex-direction and flex-wrap properties.
+
+// for example:
+// .flex-container {
+//     display: flex;
+//     flex-flow: row wrap;
+//   }
+* justify-content: The justify-content property is used to align the flex items:
+
+// for example:
+// .flex-container {
+//     display: flex;
+//     justify-content: center;
+//   }
+* align-items: The align-items property is used to align the flex items.
+
+// for example:
+// .flex-container {
+//     display: flex;
+//     height: 200px;
+//     align-items: center;
+//   }
+* align-content: The align-content property is used to align the flex lines.
+
+// for example:
+
+// .flex-container {
+//     display: flex;
+//     height: 600px;
+//     flex-wrap: wrap;
+//     align-content: space-between;
+//   }
+
+  //How to center align a div inside another div
+
+  for example:
+
+  <div class="parent">
+<div class="child">This div is centered vertically.</div> 
+</div>
+
+css properties:
+
+.parent {
+    background: #CCCCCC;
+    height: 200px;
+    width: 200px;
+    position: relative;
+    }
+    .child {
+    background: #FFFF00;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    }
+
+    by using flexbox:
+
+    css:
+
+    html,
+body { height: 100%;
+}
+.parent {
+height: 200px;
+background: #CCCCCC;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.child {
+background-color: #FFFF00;
+width: 100px;
+height: 100px;
+}
+
+
+//Difference between css grid and flex:
+
+* CSS Grids helps you create the outer layout of the webpage. You can build complex as well responsive design with this. This is why it is called ‘layout first’.
+* Flexbox mostly helps align content & move blocks.
+* CSS grids are for 2D layouts. It works with both rows and columns.
+* Flexbox works better in one dimension only (either rows OR columns).
+* It will be more time saving and helpful if you use both at the same time.
