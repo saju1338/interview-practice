@@ -1,6 +1,6 @@
 // What is currying
 
-It is technique for transforming a function of multiple arguments into several nfunctions of single argument in sequence.
+It is technique for transforming a function of multiple arguments into several functions of single argument in sequence.
 
 simple function:
 

@@ -42,6 +42,10 @@ b.name = 'saju';
 console.log('value of a ' + a.name);
 console.log('value of b ' + b.name)
 
+//output:
+//value of a sahil
+//value of a saju
+
 //Spread operator does not work in nested structure
 
 var a={

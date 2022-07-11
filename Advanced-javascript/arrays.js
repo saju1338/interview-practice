@@ -1,5 +1,29 @@
 // In this file we'll add everything about array
 
+//Difference between splice and slice
+
+//Slice:
+
+This method is used to get a new array by selecting a sub-array of a given array.
+
+for example:
+var cars=['Benz', 'Innova', 'Breeza', 'Etios', 'Dzire'];
+    var new_cars=cars.slice(1, 4);
+
+    console.log(new_cars)//output: Innova, Breeza, Etios
+
+    //Splice
+
+    This method is used to add/remove an item from the given array.
+
+    var cars=[
+        'Benz', 'Innova', 'ambassedor', 'BMW', 'Audi', 'Breeza', 'Etios', 'Dzire'];
+            cars.splice(2, 1);
+
+    console.log(cars)// output: Benz, Innova, BMW, Audi, Breeza, Etios, Dzire
+
+    i.e from second index it will remove only one cars.
+
 //How to merge two arrays:
 
 var arr1=[1,2,3];

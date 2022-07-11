@@ -99,6 +99,18 @@ position: sticky srolls along with the element like any other element untill it 
 * universals(*) selector
 * group selector (h1,h2,h3)
 
+//What is flexbox:
+
+Before the Flexbox Layout module, there were four layout modes:
+
+Block, for sections in a webpage
+Inline, for text
+Table, for two-dimensional table data
+Positioned, for explicit position of an element
+The Flexible Box Layout Module, makes it easier to design flexible responsive layout structure without using float or positioning.
+
+
+
 //Properties of a flexbox:
 
 * flex-direction:  The flex-direction property defines in which direction the container wants to stack the flex items.
