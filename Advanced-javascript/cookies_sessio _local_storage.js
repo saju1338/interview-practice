@@ -38,3 +38,5 @@ document.cookie = 'name=saju' // name is name and value is saju
 see the cookies under application in console window of the browser and we set all the values like we set name above 
 please note: if we write again document.cookie = "expires=2020-01-01"// this will create different cookie in another line, so if we want to add path or expires, then we need to write it in one document.cookie like:
 document.cookie = 'name=saju; expires=2020-01-01' 
+
+
