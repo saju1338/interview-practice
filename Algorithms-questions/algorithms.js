@@ -162,3 +162,27 @@ var printHelloworld= setInterval(()=>{
 setTimeout(function(){
     clearInterval(printHelloworld)
 },10000)
+// Swap key with value in object
+
+Url : https://stackoverflow.com/questions/23013573/swap-key-with-value-in-object
+function swap(json){
+  var ret = {};
+  for(var key in json){
+    ret[json[key]] = key;
+  }
+  return ret;
+}
+
+
+// print string in camel case
+
+var camalize = function camalize(str) {
+    return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, function(match, chr)
+    {
+        return chr.toUpperCase();
+    });
+}
+// call function within a function and second function excutes every 5 seconds 
+
+
+// 
